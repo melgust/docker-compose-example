@@ -78,8 +78,16 @@ Check containers
 docker ps
 ```
 
+Seeds table roles
+
+```sql
 INSERT INTO Roles (Name, CreatedAt, CreatedBy, UpdatedAt, UpdatedBy) VALUES(N'Admin', '2025-09-09 06:32:20.000', 0, '2025-09-09 06:32:40.000', 0);
 INSERT INTO Roles (Name, CreatedAt, CreatedBy, UpdatedAt, UpdatedBy) VALUES(N'User', '2025-09-09 06:32:20.000', 0, '2025-09-09 06:32:40.000', 0);
 INSERT INTO Roles (Name, CreatedAt, CreatedBy, UpdatedAt, UpdatedBy) VALUES(N'Guest', '2025-09-09 06:32:20.000', 0, '2025-09-09 06:32:40.000', 0);
+```
 
+Stop all containes
+
+```bash
 docker stop $(docker ps -a -q)
+```
