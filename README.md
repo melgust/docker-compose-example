@@ -37,7 +37,7 @@ docker inspect diario-sqlserver-1
 And finaly connect with sqlcmd, change container name and network name
 
 ```bash
-docker run -it --rm --network diario_appnet mcr.microsoft.com/mssql-tools /opt/mssql-tools/bin/sqlcmd -S diario-sqlserver-1 -U sa -P 'D3saweb.2025$'
+docker run -it --rm --network umg_appnet mcr.microsoft.com/mssql-tools /opt/mssql-tools/bin/sqlcmd -S umg-sqlserver-1 -U sa -P 'D3saweb.2025$'
 ```
 
 ```sql
@@ -77,3 +77,9 @@ Check containers
 ```bash
 docker ps
 ```
+
+INSERT INTO Roles (Name, CreatedAt, CreatedBy, UpdatedAt, UpdatedBy) VALUES(N'Admin', '2025-09-09 06:32:20.000', 0, '2025-09-09 06:32:40.000', 0);
+INSERT INTO Roles (Name, CreatedAt, CreatedBy, UpdatedAt, UpdatedBy) VALUES(N'User', '2025-09-09 06:32:20.000', 0, '2025-09-09 06:32:40.000', 0);
+INSERT INTO Roles (Name, CreatedAt, CreatedBy, UpdatedAt, UpdatedBy) VALUES(N'Guest', '2025-09-09 06:32:20.000', 0, '2025-09-09 06:32:40.000', 0);
+
+docker stop $(docker ps -a -q)
